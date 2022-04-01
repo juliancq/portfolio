@@ -7,10 +7,12 @@
 }
 
 *{
+    
     margin : 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 html,
@@ -69,7 +71,16 @@ section#hero > *{
     font-size: 250%;
 }
 
+.animated-img{
+
+    
+}
+
+
+
+
 section#about{
 
     background-color: var(--bg-secondary);
 }
+
