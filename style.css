@@ -6,7 +6,7 @@
     --secondary-color :  #FFC961;
     --bg-primary: white;
     --bg-secondary : #f0f0f0;
-    --gradient : linear-gradient(315deg, rgba(240,129,0,1) 40%, rgba(0,188,255,1) 73%);
+    --gradient : linear-gradient(45deg, rgba(240,129,0,1), rgba(0,188,255,1));
 }
 
 *,
@@ -17,25 +17,24 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Mono', monospace, sans-serif;
-    scroll-behavior: smooth;
 }
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  
-  ::-webkit-scrollbar-track {
-      background-color: black;
-    display: none;
-  }
-  
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: black;
+    display: none;  
+}
+
+
+::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
     border-radius: 10px;
-  }
+}
 
 .text-primary{
     color : var(--primary-color)
@@ -45,7 +44,7 @@
 
     background: linear-gradient(90deg, rgba(240,129,0,1) 0%, rgba(0,188,255,1) 100%);
     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .bg-primary{
@@ -56,14 +55,13 @@
     background-color: var(--bg-secondary);
 }
 
-html,
-body{
-    min-height: 100vh;
+
+html{
+    scroll-behavior: smooth;
+    user-select: none;
 }
 
-body{
 
-}
 
 a{
     text-decoration: none;
@@ -71,10 +69,11 @@ a{
 }
 
 nav{
-    font-size: 1.25em;
+    font-size: 1em;
     padding: 1em 5em;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 100%;
     z-index: 2;
@@ -108,7 +107,7 @@ nav a:hover{
 
 section{
 
-    height: 100vh;
+    min-height: 100vh;
 }
 
 section h2{
@@ -131,14 +130,14 @@ section h2{
     
     position: absolute;
 
-    height: 101vh;
+    height: 100vh;
     width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     background-color: whitesmoke;
-    opacity: 87%;
+    opacity: 75%;
 
 }
 
@@ -160,7 +159,10 @@ section#hero > *{
 .title{
 
     flex-basis: 60%;
-    font-size: 3.5em;
+}
+
+h1{
+    font-size: clamp(2em, 5vw, 4em);
 }
 
 .animated-img{
@@ -246,17 +248,60 @@ section#about .content{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5em;
+}
+
+
+
+.avatar{
+    position: relative;
+
+    
+
+    display: flex;
+    justify-items: center;
+}
+
+
+
+.avatar-bg{
+    
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background: var(--gradient);
+    animation: spin 3s  infinite  linear;
+    z-index: 1;
+}
+
+.avatar-img{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+
+    height: 800px;
+    width: 800px;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 100;
+}
+
+@keyframes spin {
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 .bio{
 
-    flex-basis: 50%;
-    font-size: 1.5em;
+    flex-basis: 60%;
+    font-size: 1.15em;
+    max-width: 30vw;
 }
 
-.bio p{
-    margin-bottom: 20px;
-}
 
 /* TECNOLOGIAS */
 
