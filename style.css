@@ -3,10 +3,15 @@
 :root{
 
     --primary-color : #FF9B06;
-    --secondary-color :  #FFC961;
+    /* --secondary-color :  #FFC961; */
+    --secondary-color: rgb(0 188 255);
     --bg-primary: white;
     --bg-secondary : #f0f0f0;
-    --gradient : linear-gradient(45deg, rgba(240,129,0,1), rgba(0,188,255,1));
+    --gradient : linear-gradient(45deg, rgba(240,129,0,1), rgba(240,129,0,.1));
+}
+
+body{
+    overflow-x: hidden;
 }
 
 *,
@@ -52,7 +57,8 @@
 }
 
 .bg-secondary{
-    background-color: var(--bg-secondary);
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 
@@ -83,6 +89,7 @@ nav{
     flex-basis: 15%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 1em;
 }
 
@@ -91,6 +98,7 @@ nav{
     flex-basis: 60%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 1em;
 }
 
@@ -112,7 +120,7 @@ section{
 
 section h2{
     text-align: center;
-    font-size: 3em;
+    font-size: clamp(1.5em, 3vw ,3em);
     padding: 3em;
 }
 
@@ -248,16 +256,14 @@ section#about .content{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5em;
+    gap: 10em;
+    padding-bottom: 2em;
+
+
 }
-
-
 
 .avatar{
     position: relative;
-
-    
-
     display: flex;
     justify-items: center;
 }
@@ -265,12 +271,12 @@ section#about .content{
 
 
 .avatar-bg{
-    
-    height: 350px;
-    width: 350px;
+
+    width: 17vw;
+    height: 17vw;
     border-radius: 50%;
     background: var(--gradient);
-    animation: spin 3s  infinite  linear;
+    animation: spin 2s  infinite  linear;
     z-index: 1;
 }
 
@@ -281,8 +287,8 @@ section#about .content{
     left: 50%;
     
 
-    height: 800px;
-    width: 800px;
+    height: 120%;
+    width: 120%;
 
     transform: translate(-50%, -50%);
 
@@ -298,7 +304,7 @@ section#about .content{
 .bio{
 
     flex-basis: 60%;
-    font-size: 1.15em;
+    font-size: clamp(0.75em, 1vw ,1.15em);
     max-width: 30vw;
 }
 
@@ -317,7 +323,10 @@ section#tecnologias .content{
     gap: 1em;
     flex-wrap: wrap;
 
-    max-width: 800px;
+    max-width: 60%;
+    margin-inline: auto;
+    
+    padding-bottom: 2em;
 }
 
 .box-tecno{
@@ -326,18 +335,26 @@ section#tecnologias .content{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: .5em;
 
     width: 200px;
     height: 200px;
     border-radius: 2px;
 
     background-color: var(--bg-primary);
+    box-shadow: 0 0 20px  rgba(0, 0, 0, 0.2);
+}
+
+.box-tecno:hover,
+.card-learning:hover{
+    transform: scale(1.1);
 }
 
 .box-tecno > img{
 
     width: 50%;
     height: 50%;
+    
 }
 
 .btn-top{
@@ -355,4 +372,107 @@ section#tecnologias .content{
     height: 50px;
     color: white;
     border-radius: 10px;
+}
+
+/* APRENDIENDO */
+
+section#aprendiendo .content{
+
+    max-width: 50%;
+    margin-inline: auto;
+    
+    display: grid;
+    justify-items: center;
+    gap: 2em;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-learning{
+
+    height: 200px;
+    width: clamp(200px, 50vw ,500px);
+    box-shadow: 0 0 20px  rgba(0, 0, 0, 0.2);
+
+    display: flex;
+}
+.card-learning .icon{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-learning .icon img{
+
+    width: 60%;
+    height: 60%;
+}
+
+.card-learning .icon{
+
+    width: 200px;
+    height: 100%;
+    border-right: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.card-learning .info{
+    padding: 1em;
+}
+
+.card-learning .title{
+
+    text-align: center;
+}
+
+.card-learning .description{
+
+    padding: 1em;
+    font-size: 0.85em;
+}
+
+.card-learning .description ul{
+    list-style: none;
+    margin-inline: auto;
+}
+  
+.card-learning .loading{
+
+    color: gray;
+    cursor: progress;
+}
+
+.card-learning li::before {
+
+    content: "✓";
+    color: rgb(2, 241, 34);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.card-learning li.loading::before {
+    content: "*";
+    color: var(--primary-color)
+}
+
+/* BUTTONS */
+
+.btn{
+
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 15px;
+    padding: 0.5em;
+}
+
+
+
+.f-center{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
