@@ -141,7 +141,7 @@ section h2{
     
     position: absolute;
 
-    height: 100vh;
+    height: 100%;
     width: 100%;
     top: 50%;
     left: 50%;
@@ -568,6 +568,7 @@ footer .footer-links{
     nav{
         position: absolute;
         justify-content: center;
+
     }
 
     nav .nav-items{
