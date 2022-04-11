@@ -578,6 +578,8 @@ footer .footer-links{
 
     display: none;
     justify-content: space-between;
+
+    z-index: 999;
 }
 
 .menu-item{
@@ -588,6 +590,8 @@ footer .footer-links{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    
 }
 
 .menu-mobile img{
